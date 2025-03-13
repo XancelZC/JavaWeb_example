@@ -19,7 +19,7 @@ public class DeptController {
 
     @GetMapping("/depts")
     public Result getDeptList(){
-//        log.info("查询全部部门信息");
+        log.info("查询全部部门信息");
         List<Dept> deptList = deptService.list();
         return Result.success(deptList);
     }
