@@ -8,5 +8,9 @@ import java.util.List;
 
 @Mapper
 public interface EmpMapper {
+
     List<Emp> pageQuery(EmpPageQueryDTO dto);
+
+    //动态sql for-each实现
+    void deleteEmps(List<Integer> ids);
 }
