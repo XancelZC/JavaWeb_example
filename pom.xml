@@ -45,6 +45,12 @@
             <optional>true</optional> <!-- 使用 optional 替代 provided -->
         </dependency>
         <!-- 其他依赖保持不变 -->
+
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.4.6</version>
+        </dependency>
     </dependencies>
 
     <build>
