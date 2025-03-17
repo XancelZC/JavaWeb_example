@@ -29,4 +29,11 @@ public class DeptController {
         deptService.delete(id);
         return Result.success();
     }
+
+    @PostMapping
+    public Result addDept(@RequestBody Dept dept){
+        log.info("新增部门 ");
+        deptService.add(dept);
+        return Result.success();
+    }
 }

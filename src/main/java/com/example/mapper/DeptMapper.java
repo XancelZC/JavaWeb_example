@@ -2,6 +2,7 @@ package com.example.mapper;
 
 import com.example.pojo.Dept;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -15,4 +16,7 @@ public interface DeptMapper {
 
     @Delete("delete from dept where id = #{id}")
     void deleteById(Integer id);
+
+    @Insert("insert into dept (name, create_time, update_time) VALUES (#{name},#{createTime},#{updateTime})")
+    void add(Dept dept);
 }
