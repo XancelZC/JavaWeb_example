@@ -37,4 +37,14 @@ public class DeptServiceImpl implements DeptService {
     public Dept getDeptById(Integer id) {
         return deptMapper.getDeptById(id);
     }
+
+    @Override
+    public void changeById(Dept dept) {
+        Dept existDept = deptMapper.getDeptById(dept.getId());
+        if (existDept == null){
+            throw new RuntimeException("id为"+dept.getId()+"的部门不存在");
+        }
+        dept.setUpdateTime(LocalDateTime.now());
+        deptMapper.changeById(dept);
+    }
 }

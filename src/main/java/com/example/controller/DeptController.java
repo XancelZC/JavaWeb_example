@@ -43,4 +43,11 @@ public class DeptController {
         Dept dept = deptService.getDeptById(id);
         return Result.success(dept);
     }
+
+    @PutMapping("/depts")
+    public Result changeById(@RequestBody Dept dept){
+        log.info("修改id为{}的部门",dept.getId());
+        deptService.changeById(dept);
+        return Result.success();
+    }
 }
