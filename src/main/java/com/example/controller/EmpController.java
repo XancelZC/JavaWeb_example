@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.pojo.Emp;
 import com.example.pojo.EmpPageQueryDTO;
 import com.example.pojo.PageResult;
 import com.example.pojo.Result;
@@ -29,6 +30,13 @@ public class EmpController {
     public Result deleteEmps(@PathVariable List<Integer> ids){
         log.info("删除id为{}的员工",ids);
         empService.deleteEmps(ids);
+        return Result.success();
+    }
+
+    @PostMapping
+    public Result addEmp(@RequestBody Emp emp){
+        log.info("新增员工{}",emp);
+        empService.addEmp(emp);
         return Result.success();
     }
 }

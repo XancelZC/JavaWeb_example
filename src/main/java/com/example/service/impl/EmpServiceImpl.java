@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Slf4j
@@ -41,5 +42,12 @@ public class EmpServiceImpl implements EmpService {
     @Override
     public void deleteEmps(List<Integer> ids) {
         empMapper.deleteEmps(ids);
+    }
+
+    @Override
+    public void addEmp(Emp emp) {
+        emp.setCreateTime(LocalDateTime.now());
+        emp.setUpdateTime(LocalDateTime.now());
+        empMapper.addEmp(emp);
     }
 }
