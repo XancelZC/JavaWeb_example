@@ -25,4 +25,7 @@ public interface EmpMapper {
 
 
     void changeEmp(Emp emp);
+
+    @Select("select *from emp where username = #{username}")
+    Emp findByUsername(String username);
 }

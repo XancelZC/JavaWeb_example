@@ -17,4 +17,6 @@ public interface EmpService {
     Emp findById(Integer id);
 
     void changeEmp(Emp emp);
+
+    Emp findByUsername(String username);
 }
